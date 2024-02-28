@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}تفريغ الصوت{% endblock %}
+{% block body %}
+
+<div class="container mt-5">
+  <div class="form-group">
+    <label for="formFile" class="form-label">تفريغ الصوت</label>
+    <input class="form-control" type="file" id="file" name="file">
+  </div>
+  <button class="btn btn-primary mt-2" id="transcribeAudio" onclick="transcribeFunction()">اكتب</button>  
+</div>
+<div class="container mt-5">
+  <div class="form-group">
+      <label for="formFile" class="form-label mt-2">التفريغ</label>
+      <textarea class="form-control mt-2" name="toSummarize" id="toSummarize" rows="3" placeholder="التفريغ"></textarea>
+      <button class="btn btn-primary mt-2" onclick="clipboard('toSummarize')">نسخ</button>
+  </div>
+</div>
+<div class="container mt-5">
+  <div class="form-group">
+    <label for="formFile" class="form-label mt-2">الكلمات المفتاحية</label>
+  <textarea class="form-control mt-2" name="keywords" id="keywords" rows="3" placeholder="الكلمات المفتاحية"></textarea>
+  <button class="btn btn-primary mt-2" onclick="clipboard('keywords')">نسخ</button>
+</div>
+</div>
+<div class="container mb-3 mt-5">
+  <div class="form-group">
+    <div class="row">
+      <div class="col">
+        <label class="mb-2">صناعة صورة</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-primary" onclick="generateImage()" id="drawButton">ارسم</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+          <img id="outputImage" style="width: 300px; max-width: 70%;" class="mt-2 mx-auto d-block">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-primary" style="margin-bottom: 100px;" onclick="downloadImage()" id="downloadButton">تنزيل الصورة</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='js/common.js')}}"></script>
+<script src="{{ url_for('static', filename='js/transcribe.js')}}"></script>
+{% endblock %}

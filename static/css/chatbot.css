@@ -1,0 +1,29 @@
+body {
+    background-color: aliceblue !important;
+}
+
+#humanInput {
+    width: 100%;
+}
+
+.botMessage {
+    background-color: white;
+    float: left !important;
+    padding: 10px;
+    border-radius: 20px;
+    width: 60%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.humanMessage {
+    background-color: #32d9c6;
+    float: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    width: 60%;
+    text-align: right;
+}

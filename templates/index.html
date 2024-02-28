@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}الصفحة الرئيسة{% endblock %}
+{% block body %}
+<section class="hero text-center">
+  <div class="container">
+    <h1 class="display-4 mt-5 mb-5 fw-bold">كتابة وتلخيص المقالات باستخدام الذكاء الاصطناعي</h1>
+    <img src="https://img.freepik.com/free-vector/open-automation-architecture-software-architecture-open-source-robotics-industrial-soft-development-flexible-manufacturing-automation_335657-4499.jpg?w=740&t=st=1690986063~exp=1690986663~hmac=1e891d9a4987299c581ac9d0565fd7ca9735f14c813afeb436232ab9aab1c2d1" class="w-25">
+    <p class="lead">مرحبًا بك في شركة مبدع المقالات، نقدم خدمات كتابة وتلخيص المقالات باستخدام أحدث تقنيات الذكاء الاصطناعي. ابدأ الآن!</p>
+    <a href="{{ url_for('create_article') }}" class="btn btn-primary btn-lg">ابدأ الآن</a>
+  </div>
+</section>
+
+<section id="about" class="py-5 text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <h2 class="display-4">من نحن</h2>
+        <p class="lead">نحن شركة رائدة في مجال كتابة وتلخيص المقالات باستخدام الذكاء الاصطناعي. نمتلك فريقًا من المحترفين الذين يستخدمون التكنولوجيا الحديثة لتلبية احتياجات عملائنا.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="bg-light py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto text-center">
+        <h2 class="display-4">خدماتنا</h2>
+        <p class="lead">نقدم مجموعة واسعة من الخدمات التي تشمل:</p>
+        <ul class="list-group">
+          <li class="list-group-item">كتابة مقالات عالية الجودة</li>
+          <li class="list-group-item">تلخيص المقالات بإستخدام تقنيات الذكاء الاصطناعي</li>
+          <li class="list-group-item">إنشاء الصور باستخدام الذكاء الاصطناعي</li>
+          <li class="list-group-item">استخدام الذكاء الاصطناعي لتحسين (SEO) عبر إنشاء الكلمات المفتاحية</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="py-5 text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <h2 class="display-4">اتصل بنا</h2>
+        <p class="lead">هل لديك أية استفسارات أو متطلبات خاصة؟ اتصل بنا الآن وسنكون سعداء بخدمتك.</p>
+        <p>رقم الهاتف: 000-000-000</p>
+        <p>البريد الإلكتروني: info@company.com</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

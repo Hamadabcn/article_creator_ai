@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block title %}لخص مقالا{% endblock %}
+{% block body %}
+<div class="container mt-5">
+  <div class="form-group">
+      <label for="toSummarize" class="mb-2">المقال</label>
+      <textarea class="form-control mb-2" name="toSummarize" id="toSummarize" rows="3" placeholder="المقال"></textarea>
+    </div>
+  <button class="btn btn-primary" onclick="summarizeArticle()">اكتب الملخص</button>
+  <textarea class="form-control mb-2 mt-2" name="summarized" id="summarized" rows="3" placeholder="الملخص"></textarea>
+  <button class="btn btn-primary" onclick="clipboard('summarized')">نسخ</button>
+</div>
+<div class="container mb-3 mt-5">
+  <div class="form-group">
+    <div class="row">
+      <div class="col">
+        <label for="title" class="mb-2">العنوان المقترح</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <textarea class="form-control mb-2" name="title" id="title" rows="3" placeholder="العنوان"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-primary" onclick="clipboard('title')">نسخ</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container mb-3 mt-5">
+  <div class="form-group">
+    <div class="row">
+      <div class="col">
+        <label for="keywords" class="mb-2">كتابة الكلمات المفتاحية</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <textarea class="form-control mb-2" name="keywords" id="keywords" rows="3" placeholder="الكلمات المفتاحية"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-primary" onclick="clipboard('keywords')">نسخ</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container mb-3 mt-5">
+  <div class="form-group">
+    <div class="row">
+      <div class="col">
+        <label class="mb-2">صناعة صورة للمقال</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-primary" onclick="generateImage()" id="drawButton">ارسم</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+          <img id="outputImage" style="width: 300px; max-width: 70%;" class="mt-2 mx-auto d-block">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-primary" style="margin-bottom: 100px;" onclick="downloadImage()" id="downloadButton">تنزيل الصورة</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="{{url_for('static',filename='js/summarize.js')}}"></script>
+
+<script src="{{ url_for('static', filename='js/common.js')}}"></script>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}انشئ مقالا{% endblock %}
+{% block body %}
+<div class="container mt-5">
+  <div class="form-group">
+      <label for="articleTitle" class="mb-2">العنوان</label>
+      <input type="text" name="articleTitle" class="form-control mb-2 w-50" id="articleTitle" placeholder="اكتب عنوانا لمقالك">
+  </div>
+  <button class="btn btn-primary" onclick="writeArticle()">اكتب المقال</button>
+</div>
+<div class="container mb-3 mt-5">
+  <div class="form-group">
+    <label for="maqal" class="mb-2">المقال</label>
+    <textarea class="form-control mb-2" name="maqal" id="maqal" rows="3" placeholder="المقال المقترح"></textarea>
+  </div> 
+  <button class="btn btn-primary" onclick="clipboard('maqal')">نسخ</button>
+  <button class="btn btn-primary" onclick="extendArticle()" disabled id="continue-button">استمرار</button>
+</div>
+<div class="container mb-3 mt-5">
+  <div class="form-group">
+    <div class="row">
+      <div class="col">
+        <label for="keywords" class="mb-2">كتابة الكلمات المفتاحية</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <textarea class="form-control mb-2" name="keywords" id="keywords" rows="3" placeholder="الكلمات المفتاحية"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-primary" onclick="clipboard('keywords')">نسخ</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container mb-3 mt-5">
+  <div class="form-group">
+    <div class="row">
+      <div class="col">
+        <label class="mb-2">صناعة صورة للمقال</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-primary" onclick="generateImage()" id="drawButton">ارسم</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+          <img id="outputImage" style="width: 300px; max-width: 70%;" class="mt-2 mx-auto d-block">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-primary" onclick="downloadImage()" id="downloadButton" style="margin-bottom: 10px;">تنزيل الصورة</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='js/common.js')}}"></script>
+<script src="{{ url_for('static', filename='js/create.js')}}"></script>
+{% endblock %}
