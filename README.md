@@ -1,4 +1,4 @@
-# Article Creation Program with ChatGPT, DreamStudio, and Integrated Chatbot
+# Article Creator Application with ChatGPT, DreamStudio, and Integrated Chatbot
 This project is a versatile article creation program that utilizes the power of ChatGPT for generating content, DreamStudio for enhancing visuals, and an integrated chatbot for seamless interaction.
 
 # Features
